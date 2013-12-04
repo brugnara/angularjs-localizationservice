@@ -35,7 +35,7 @@ angular.module('localization', [])
                     // store the returned array in the dictionary
                     localize.dictionary = data;
                 }
-                // set the flag that the resource are loaded
+                // set that the resource are loaded
                 localize.resourceFileLoaded = true;
                 // broadcast that the file has been loaded
                 $rootScope.$broadcast('localizeResourcesUpdated');
