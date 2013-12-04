@@ -8,6 +8,19 @@ The service returns a localized string based on the current locale of the browse
 
 You can inject the service into a controller or use it via the i18n filter or the i18n directive provided in the code.
 
+## Scoped Dictionaries
+
+This feature allow you to use a dictionary for each one of your components. A simple example will follow:
+
+    |_ app
+      |_ i18n
+        |_ resources-locale_defaults.js
+        |_ component-1
+          |_ resources-locale_defaults.js
+
+    <a href="">{{ "clickme" | i18n }}</a> => <a>Click me</a>
+    <a href="">{{ "clickme" | i18n:'component-1' }}</a> => <a>Click me, I dare you!</a>
+    
 ## Wiring It Up
 
 You need to follow a few steps to wire the service into your app:
