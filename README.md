@@ -8,19 +8,6 @@ The service returns a localized string based on the current locale of the browse
 
 You can inject the service into a controller or use it via the i18n filter or the i18n directive provided in the code.
 
-## Scoped Dictionaries
-
-This feature allow you to use a dictionary for each one of your components. A simple example will follow:
-
-    |_ app
-      |_ i18n
-        |_ resources-locale_defaults.js
-        |_ component-1
-          |_ resources-locale_defaults.js
-
-    <a href="">{{ "clickme" | i18n }}</a> => <a>Click me</a>
-    <a href="">{{ "clickme" | i18n:'component-1' }}</a> => <a>Click me, I dare you!</a>
-    
 ## Wiring It Up
 
 You need to follow a few steps to wire the service into your app:
@@ -48,6 +35,19 @@ The key is used to look up the localized string, the value will be returned from
 I've created a sample app that uses the Resource Localization Service to provide the text for the entire application. I registered 'localization' in my app's dependency list and I then use a combination of ng-bind="'_HomeTitle_' | i18n" and data-i18n="_HomeTitle_" to insert the text into the page at run time.
 
 There is a delay loading the resource file, you may need to use the filter instead of the directive on the home page. This is due to the fact that the directive is only called once per instance where a filter is re-evaluated each time the DOM is compiled.
+
+## Scoped Dictionaries
+
+This feature allow you to use a dictionary for each one of your components. A simple example will follow:
+
+    |_ app
+      |_ i18n
+        |_ resources-locale_defaults.js
+        |_ component-1
+          |_ resources-locale_defaults.js
+
+    <a href="">{{ "clickme" | i18n }}</a> => <a>Click me</a>
+    <a href="">{{ "clickme" | i18n:'component-1' }}</a> => <a>Click me, I dare you!</a>
 
 ## Change Log
 
