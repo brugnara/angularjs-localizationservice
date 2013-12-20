@@ -67,7 +67,7 @@ angular.module('localization', [])
                     // set language
                     localize.language = lang;
                 }
-                return 'i18n/' + (scope ? scope + '/' : '') + 'resources-locale_' + localize.language + '.js';
+                return 'i18n/' + (scope ? scope + '/' : '') + 'resources-locale_' + localize.language + '.json';
             },
 
             // loads the language resource file from the server
@@ -81,7 +81,7 @@ angular.module('localization', [])
                     })
                     .error(function () {
                         // the request failed set the url to the default resource file
-                        var url = 'i18n/' + (scope ? scope + '/' : '') + 'resources-locale_default.js';
+                        var url = 'i18n/' + (scope ? scope + '/' : '') + 'resources-locale_default.json';
                         // request the default resource file
                         $http({ method: "GET", url: url, cache: false })
                             .success(function(data) {
